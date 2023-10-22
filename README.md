@@ -19,7 +19,8 @@ Welcome to **NoRBX**.
 
 ### Via the terminal :
 1. Launch the **terminal** (Ctrl + Alt + T).
-2.
+
+2. 
 ```bash
 git clone https://github.com/lolesx/NoRBX
 ```
@@ -36,6 +37,7 @@ python3 main.py
 
 ### Via the terminal :
 1. Launch the **terminal** (Ctrl + Alt + T).
+
 2.
 ```bash
 cd NoRBX
