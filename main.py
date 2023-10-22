@@ -1,11 +1,15 @@
 #By Loles
 
-import os
-import time
-from re import search
-from os.path import isfile
-from subprocess import DEVNULL, PIPE, Popen, STDOUT
-from pystyle import Add, Colors, Colorate, Center, Write
+try:
+    import os
+    import time
+    from re import search
+    from os.path import isfile
+    from subprocess import DEVNULL, PIPE, Popen, STDOUT
+    from pystyle import Add, Colors, Colorate, Center, Write
+except ImportError:
+    os.system('pip install pystyle re')
+
 
 
 def cat(file):
