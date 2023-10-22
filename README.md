@@ -13,7 +13,7 @@ Welcome to **NoRBX**.
    
    **Windows: ❌** **With windows it can be used [CloudShell](https://cloud.google.com/shell?hl=en)**
 
-![Illustration Image](https://cdn.discordapp.com/attachments/1144253896915689534/1165689938046623904/086be1cb-57a7-4843-93f3-0239c9e13707.jpeg?ex=6547c45a&is=65354f5a&hm=842e2ba9015e56f2506f28407f20651c782e430354e6a3222c4ef8f7cef8818e&).
+![Illustration Image](https://cdn.discordapp.com/attachments/1144253896915689534/1165689938046623904/086be1cb-57a7-4843-93f3-0239c9e13707.jpeg?ex=6547c45a&is=65354f5a&hm=842e2ba9015e56f2506f28407f20651c782e430354e6a3222c4ef8f7cef8818e&)
 
 ## Installation :
 
