@@ -55,5 +55,3 @@ Enjoy **NoRBX**!
 | -------------- | --------------- | --------------|  
 |![Index](https://cdn.discordapp.com/attachments/1144253896915689534/1165720746572652685/image.png?ex=6547e10c&is=65356c0c&hm=96608b62074e489da66ed795882ffe31fc0d7ae0aee185243aece5704a332763&)|![f](https://cdn.discordapp.com/attachments/1144253896915689534/1165720442619830332/image.png?ex=6547e0c3&is=65356bc3&hm=801ddaf8e8263214cb1b5eb041f9e54e9bf12fd76b0f4f8c2e38034bf4631082&)|![f](https://cdn.discordapp.com/attachments/1144253896915689534/1165719687179534366/image.png?ex=6547e00f&is=65356b0f&hm=52b7d4401ed29cdd1d80af81da1ae398d138265d367449b067c5a9adaf5ef474&)
 
-
-![Demo Image 1](https://cdn.discordapp.com/attachments/1144253896915689534/1165719687179534366/image.png?ex=6547e00f&is=65356b0f&hm=52b7d4401ed29cdd1d80af81da1ae398d138265d367449b067c5a9adaf5ef474&)
