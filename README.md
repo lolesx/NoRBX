@@ -25,7 +25,7 @@ git clone https://github.com/lolesx/NoRBX
 ```
 3.
 ```bash
-cd Roblox-Phish
+cd NoRBX
 ```
 4. 
 ```
@@ -38,7 +38,7 @@ python3 main.py
 1. Launch the **terminal** (Ctrl + Alt + T).
 2.
 ```bash
-cd Roblox-Phish
+cd NoRBX
 ```
 3. 
 ```
