@@ -21,7 +21,7 @@ Welcome to **NoRBX**.
 1. Launch the **terminal** (Ctrl + Alt + T).
 2.
 ```bash
-git clone https://github.com/Euronymou5/Roblox-Phish
+git clone https://github.com/lolesx/NoRBX
 ```
 3.
 ```bash
