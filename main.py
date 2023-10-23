@@ -1,15 +1,11 @@
 #By Loles
 
-try:
-    import os
-    import time
-    from re import search
-    from os.path import isfile
-    from subprocess import DEVNULL, PIPE, Popen, STDOUT
-    from pystyle import Add, Colors, Colorate, Center, Write
-except ImportError:
-    os.system('pip install pystyle re')
-
+import os
+import time
+from re import search
+from os.path import isfile
+from subprocess import DEVNULL, PIPE, Popen, STDOUT
+from pystyle import Add, Colors, Colorate, Center, Write
 
 
 def cat(file):
@@ -49,8 +45,8 @@ lhr_log = open(lhr_file, 'w')
 if os.path.isfile('server/cloudflared'):
    pass
 else:
-  print('\n\033[31m[!] Cloudflare no esta instalado.')
-  print('\n\033[35m[~] Instalando cloudflare...')
+  print('\n\033[31m[!] Cloudflare is not installed.')
+  print('\n\033[35m[~] Installing cloudflare...')
   os.system("bash modules/install.sh")
 
 def menu():
